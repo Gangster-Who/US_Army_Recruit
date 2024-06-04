@@ -1,0 +1,11 @@
+.new-bg {
+  background-color: #231f20;
+}
+
+.navbar {
+  border-bottom: 5px solid #ffcc00;
+  padding: 0.5rem 1rem;
+}
+.navbar-brand img {
+  width: 150px;
+}
