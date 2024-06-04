@@ -12,19 +12,23 @@ function contactMe2() {
 
 const questions = [
   "Do you have a valid Green Card or US Citizenship?",
-  "Do you have a High School Degree or GED?",
-  "Have you ever been to a doctor? Did you receive any major surgery? Are you currently taking any medicine?",
+  "Do you have a High School Degree / GED or will graduate next year?",
+  "Did you receive any major surgery? Are you currently taking any medicine?",
   "Have you ever been arrested or got involved in any law violation?",
-  "Have you ever used drugs?",
-  "Are you prior service and what branch?"
+  "Have you ever used drugs?"
 ];
 
 let currentQuestionIndex = 0;
 
 function handleAnswer(isEligible) {
-  if (!isEligible) {
-      window.location.href = 'not-eligible.html';
-      return;
+  if ((currentQuestionIndex >= 2 && currentQuestionIndex <= 4) && isEligible) {
+    window.location.href = 'not-eligible.html';
+    return;
+  }
+
+  if ((currentQuestionIndex < 2) && !isEligible) {
+    window.location.href = 'not-eligible.html';
+    return;
   }
   
   currentQuestionIndex++;
